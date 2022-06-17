@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.List;
 
 @Controller
-@RequiredArgsConstructor
+@RequiredArgsConstructor // final 필드에 대해 생성자를 만들어주는 lombok 어노테이션
 public class UserController {
 
   private final UserService userService;
