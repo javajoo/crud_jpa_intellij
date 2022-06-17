@@ -8,7 +8,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -63,5 +65,20 @@ public class UserRestController {
         }
         return map;
     }
-}
 
+    @GetMapping("/ex/search/{loginId}")
+    // @PathVariable을 통해 설정한 변수를 요청메소드의 파라미터로 사용할 수 있다.(파라미터를 하나만 받을 수 있다.)
+    public Map<String, Object> search(@PathVariable("loginId") String loginId) {
+        Map<String, Object> map = new HashMap<>();
+        List<User> userList = new ArrayList<>();
+        userList.add(userService.selectUserByLoginId(loginId));
+
+        map.put("result", "success");
+        map.put("userList", userList);
+
+        if (userList.size() < 1) {
+            map.put("result", "error");
+        }
+        return map;
+    }
+}

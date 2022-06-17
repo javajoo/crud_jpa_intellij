@@ -9,16 +9,37 @@
 <html>
 <head>
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+    <!-- 합쳐지고 최소화된 최신 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <!-- 부가적인 테마 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+    <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <div>
-        <input type="text" placeholder="아이디" id="loginId" name="loginId"><br>
-        <input type="password" placeholder="비밀번호" id="password" name="password"><br>
-        <input type="text" placeholder="생년월일" id="birth" name="birth"><br>
-        <input type="text" placeholder="직업" id="job" name="job"><br>
-        <button type="button" class="insert-btn" onclick="insertBtn()">추가</button>
-    </div>
-
+    <h1 class="text-center">USER 추가</h1>
+    <table class="table table-striped text-center">
+        <tr>
+            <td>아이디</td>
+            <td><input type="text" placeholder="아이디" id="loginId" name="loginId"></td>
+        </tr>
+        <tr>
+            <td>비밀번호</td>
+            <td><input type="password" placeholder="비밀번호" id="password" name="password"></td>
+        </tr>
+        <tr>
+            <td>생년월일</td>
+            <td><input type="text" placeholder="생년월일" id="birth" name="birth"></td>
+        </tr>
+        <tr>
+            <td>직업</td>
+            <td><input type="text" placeholder="직업" id="job" name="job"></td>
+        </tr>
+    </table>
+    <button type="button" class="btn insert-btn btn-success" onclick="insertBtn()">추가</button>
 <script>
     function insertBtn() {
            let loginId = $('#loginId').val().trim();
