@@ -66,6 +66,11 @@ public class UserRestController {
         return map;
     }
 
+    /**
+     * 검색 API
+     * @param loginId
+     * @return
+     */
     @GetMapping("/ex/search/{loginId}")
     // @PathVariable을 통해 설정한 변수를 요청메소드의 파라미터로 사용할 수 있다.(파라미터를 하나만 받을 수 있다.)
     public Map<String, Object> search(@PathVariable("loginId") String loginId) {
